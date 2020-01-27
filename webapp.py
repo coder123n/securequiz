@@ -24,6 +24,7 @@ def startOver():
 
 @app.route('/page1')
 def renderPage1():
+    session["full_name"] = request.form["fullName"]
     return render_template('page1.html')
 
 @app.route('/page2',methods=['GET','POST'])
