@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Page 4--Your Score!{% endblock %}
+
+{% block content %}  
+  
+  
+  <h1>Now I know:</h1>
+
+<ul>
+ <li> Your first name is: {{session[first_name]}} </li>
+ <li> Your last name is: {{session[last_name]}} </li>
+ <li> Your favorite color is: {{session[favorite_color]}} </li>
+</ul>
+
+<div id="footer">
+
+ <a href="/startOver">Retake Quiz</a>
+
+</div>
+
+{% endblock %}
