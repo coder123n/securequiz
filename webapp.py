@@ -23,7 +23,10 @@ def startOver():
 
 @app.route('/page1')
 def renderPage1():
-    session["full_name"] = request.form["fullName"]
+    if request.form["WW1"] == "1914":
+        session["Q1"] = True
+    else:
+        session[Q1] = False
     return render_template('page1.html')
 
 @app.route('/page2',methods=['GET','POST'])
