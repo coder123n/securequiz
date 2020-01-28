@@ -18,7 +18,6 @@ def renderMain():
 
 @app.route('/startOver')
 def startOver():
-    #TODO: delete everything from the session
     session.clear
     return redirect('/')
 
@@ -29,20 +28,22 @@ def renderPage1():
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    #TODO: save the first and last name in the session
     session["first_name"] = request.form["firstName"]
     session["last_name"] = request.form["lastName"]
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
-    #TODO: save the favorite color in the session
     session["favorite_color"] = request.form["favoriteColor"]
     return render_template('page3.html')
     
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
-    #TODO: save the favorite color in the session
+    session["favorite_color"] = request.form["favoriteColor"]
+    return render_template('page4.html')
+  
+@app.route('/page5',methods=['GET','POST'])
+def renderPage5():
     session["favorite_color"] = request.form["favoriteColor"]
     return render_template('page4.html')
     
