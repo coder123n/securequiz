@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Page 4{% endblock %}
+
+{% block content %}
+  <h1>Question #5</h1>
+
+ <form action="/page4" method="POST">
+  Which one of the seven ancient wonders is still standing today?<br>
+  <input type="radio" name="ancient wonders" value="Pyramid" checked> Great pyramids of Giza<br>
+  <input type="radio" name="ancient wonders" value="Lighthouse" checked> The lighthouse at Alexandria<br>
+  <input type="radio" name="ancient wonders" value="male" checked> Male<br>
+  <input type="submit" value="Submit">
+ </form> 
+
+
+{% endblock %}
