@@ -23,16 +23,15 @@ def startOver():
 
 @app.route('/page1')
 def renderPage1():
-    if request.form["WW1"] == "1914":
-        session["Q1"] = True
-    else:
-        session[Q1] = False
+    
     return render_template('page1.html')
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    session["first_name"] = request.form["firstName"]
-    session["last_name"] = request.form["lastName"]
+    if request.form["WW1"] == "1914":
+        session["Q1"] = True
+    else:
+        session["Q1"] = False
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
@@ -58,4 +57,4 @@ def renderFinalPage():
     
     
 if __name__=="__main__":
-    app.run(debug=False)
+    app.run(debug=True)
