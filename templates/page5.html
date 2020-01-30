@@ -3,14 +3,13 @@
 {% block title %}Page 4{% endblock %}
 
 {% block content %}
-  <h1>Question #5</h1>
+  <h1>Which one of the seven ancient wonders is still standing today?</h1>
 
- <form action="/page4" method="POST">
-  Which one of the seven ancient wonders is still standing today?<br>
-  <input type="radio" name="ancient wonders" value="Pyramid" checked> Great pyramids of Giza<br>
-  <input type="radio" name="ancient wonders" value="Lighthouse" checked> The lighthouse at Alexandria<br>
-  <input type="radio" name="ancient wonders" value="Temple" checked> Temple of Artemis<br>
-  <input type="radio" name="ancient wonders" value="Gardens" checked> The Hanging Gardens of Babylon<br>
+ <form action="/final_page" method="POST">
+  <input type="radio" name="wonders" value="Pyramid" checked>Great pyramids of Giza<br>
+  <input type="radio" name="wonders" value="Lighthouse" checked> The lighthouse at Alexandria<br>
+  <input type="radio" name="wonders" value="Temple" checked> Temple of Artemis<br>
+  <input type="radio" name="wonders" value="Gardens" checked> The Hanging Gardens of Babylon<br>
   <input type="submit" value="Submit">
  </form> 
 
