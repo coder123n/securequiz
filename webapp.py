@@ -44,18 +44,26 @@ def renderPage3():
     
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
-    session["favorite_color"] = request.form["favoriteColor"]
+    if request.form["titanic"] == "1912":
+        session["Q3"] = True
+    else:
+        session["Q3"] = False
     return render_template('page4.html')
   
 @app.route('/page5',methods=['GET','POST'])
 def renderPage5():
-    session["favorite_color"] = request.form["favoriteColor"]
-    return render_template('page4.html')
+    if request.form["WW2"] == "1945":
+        session["Q4"] = True
+    else:
+        session["Q4"] = False
+    return render_template('page5.html')
     
 @app.route('/end',methods=['GET','POST'])
 def renderFinalPage():
-    #TODO: save the favorite color in the session
-    session["favorite_color"] = request.form["favoriteColor"]
+    if request.form["wonders"] == "Pyramid":
+        session["Q5"] = True
+    else:
+        session["Q5"] = False
     return render_template('final_page.html')
     
     
