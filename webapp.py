@@ -37,17 +37,20 @@ def renderPage3():
     
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
+    session["Q3"] = request.form["titanic"]
     return render_template('page4.html')
   
 @app.route('/page5',methods=['GET','POST'])
 def renderPage5():
+    session["Q4"] = request.form["WW2"]
     return render_template('page5.html')
     
 @app.route('/end',methods=['GET','POST'])
 def renderFinalPage():
+    session["Q5"] = request.form["wonders"]
     percent = 0
     if session["Q1"] == "1914":
-        percent = 1
+        percent +=1
     if session["Q2"] == "Abe":
         percent +=1
     if session["Q3"] == "1912":
@@ -58,6 +61,7 @@ def renderFinalPage():
         percent +=1
     percent = percent / 5
     percent = percent * 100
+    print(session)
     return render_template('final_page.html',per=percent)
     
     
