@@ -23,48 +23,42 @@ def startOver():
 
 @app.route('/page1')
 def renderPage1():
-    
     return render_template('page1.html')
 
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
-    if request.form["WW1"] == "1914":
-        session["Q1"] = True
-    else:
-        session["Q1"] = False
+    session["Q1"] = request.form["WW1"]
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
-    if request.form["pres"] == "Abe":
-        session["Q2"] = True
-    else:
-        session["Q2"] = False
+    session["Q2"] = request.form["pres"]
     return render_template('page3.html')
     
 @app.route('/page4',methods=['GET','POST'])
 def renderPage4():
-    if request.form["titanic"] == "1912":
-        session["Q3"] = True
-    else:
-        session["Q3"] = False
     return render_template('page4.html')
   
 @app.route('/page5',methods=['GET','POST'])
 def renderPage5():
-    if request.form["WW2"] == "1945":
-        session["Q4"] = True
-    else:
-        session["Q4"] = False
     return render_template('page5.html')
     
 @app.route('/end',methods=['GET','POST'])
 def renderFinalPage():
-    if request.form["wonders"] == "Pyramid":
-        session["Q5"] = True
-    else:
-        session["Q5"] = False
-    return render_template('final_page.html')
+    percent = 0
+    if session["Q1"] == "1914":
+        percent = 1
+    if session["Q2"] == "Abe":
+        percent +=1
+    if session["Q3"] == "1912":
+        percent +=1
+    if session["Q4"] == "1945":
+        percent +=1
+    if session["Q5"] == "Pyramid":
+        percent +=1
+    percent = percent / 5
+    percent = percent * 100
+    return render_template('final_page.html',per=percent)
     
     
 if __name__=="__main__":
