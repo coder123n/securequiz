@@ -64,7 +64,7 @@ def renderFinalPage():
         percent +=1
     else:
         one = "You answered " + session["Q1"] + " for Question 1. The correct answer was 1914"
-    if session["Q2"] == "Abe":
+    if session["Q2"] == "Abraham Lincoln":
         two = " You correctly answered " + session["Q2"] + " for Question 2."
         percent +=1
     else:
@@ -79,7 +79,7 @@ def renderFinalPage():
         percent +=1
     else:
         four = " You answered " + session["Q4"] + " for Question 4. The correct answer was 1945"
-    if session["Q5"] == "Pyramid":
+    if session["Q5"] == "Great pyramid of Giza":
         five = " You correctly answered " + session["Q5"] + " for Question 5."
         percent +=1
     else:
